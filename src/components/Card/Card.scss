@@ -1,0 +1,14 @@
+@import '../../scss/config';
+@import '../../../node_modules/gorko/src/functions/get-size';
+@import '../../../node_modules/gorko/src/functions/get-color';
+
+.card {
+  height: 100%;
+  padding: get-size('400');
+  background-color: get-color('grey');
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+}

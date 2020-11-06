@@ -1,0 +1,11 @@
+@import '../../scss/config';
+@import '../../../node_modules/gorko/src/functions/get-size';
+
+.movie {
+  padding: get-size('400');
+  h2,
+  p,
+  ul {
+    max-width: 80ch;
+  }
+}

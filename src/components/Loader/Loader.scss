@@ -1,0 +1,70 @@
+@import '../../scss/config';
+@import '../../../node_modules/gorko/src/functions/get-size';
+@import '../../../node_modules/gorko/src/functions/get-color';
+
+.loader {
+  position: fixed;
+  top: 10rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__item {
+    position: relative;
+    width: 10em;
+    height: 11.875em;
+    border: 0.25em solid get-color('light');
+    border-top-color: transparent;
+    border-radius: 0.25em 0.25em 1em 1em;
+    box-shadow: 0 0 0 0.25em get-color('grey'),
+      0 0.25em 0.5em rgba(0, 0, 0, 0.5);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 2em;
+      left: calc(100% + 0.25em);
+      width: 3em;
+      height: 5em;
+      display: block;
+      border: 0.25em solid get-color('grey');
+      border-radius: 0 1.5em 1.5em 0;
+    }
+  }
+
+  &__fill {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0 0 1em 1em;
+    background-color: get-color('quaternary');
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background-color: get-color('light');
+      border-radius: 40%;
+      animation: wave 6s linear infinite;
+    }
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  35% {
+    transform: translateY(-60%) rotate(250deg);
+  }
+  100% {
+    transform: translateY(0) rotate(20deg);
+  }
+}

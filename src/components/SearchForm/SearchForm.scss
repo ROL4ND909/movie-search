@@ -1,0 +1,20 @@
+@import '../../scss/config';
+@import '../../../node_modules/gorko/src/functions/get-size';
+@import '../../../node_modules/gorko/src/functions/get-color';
+
+.search-form {
+  padding: get-size('700') 0;
+  background-color: get-color(quaternary);
+
+  form {
+    display: flex;
+  }
+
+  &__input {
+    flex: 1;
+    margin-right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background-color: #fff;
+    border: 1px solid get-color('grey');
+  }
+}
