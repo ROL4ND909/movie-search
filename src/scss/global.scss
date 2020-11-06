@@ -41,6 +41,39 @@ a {
   outline-offset: 0.25rem;
 }
 
+.navbar {
+  background-color: get-color('secondary-shade');
+
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    margin-left: get-size('400');
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  a {
+    display: block;
+    padding: calc(#{get-size('400')} - 0.25rem) 0 get-size('400');
+    color: get-color('light');
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-top: 0.25rem solid transparent;
+
+    &:hover {
+      border-top: 0.25rem solid get-color('light');
+    }
+  }
+}
+
 // Utilities
 @import './utilities/flow';
 @import './utilities/radius';

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import {Route, HashRouter as Router, Link} from 'react-router-dom';
 
-import Landing from './components/home/landing';
+import Search from './Pages/Search';
+import Featured from './Pages/Featured';
 import Movie from './components/Movie/Movie';
 
 import store from './store';
@@ -12,10 +13,18 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <React.Fragment>
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/movie/:id" component={Movie} />
-          </React.Fragment>
+          <div className="navbar">
+            <nav className="wrapper">
+              <ul>
+                <li><Link to="/">Search</Link></li>
+                <li><Link to="/featured">Featured</Link></li>
+              </ul>
+            </nav>
+          </div>
+
+          <Route exact path="/" component={Search} />
+          <Route  path="/movie/:id" component={Movie} />
+          <Route  path="/featured" component={Featured} />
         </Router>
       </Provider>
     );
