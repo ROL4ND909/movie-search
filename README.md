@@ -3,7 +3,7 @@
 I used the npx create-react-app as a starter. For css I switched to Sass combined with the methodology of [CUBE css](https://piccalil.li/blog/cube-css/).
 For state managment I used redux
 
-You can see it live at my [github page](https://rol4nd909.github.io/movie-search/#/)
+
 
 ## Available Scripts
 
